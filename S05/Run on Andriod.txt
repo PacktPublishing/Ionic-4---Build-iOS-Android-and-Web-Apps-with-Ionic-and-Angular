@@ -1,0 +1,6 @@
+Running the App on a Real Android Device
+You can easily run the app on a real Android device, too.
+
+Simply connect your Android phone to your machine via USB and enable the "Developer Options" as described here: https://developer.android.com/studio/debug/dev-options
+
+Once enabled, check "USB Debugging" in the "Developer Options" and you're good to go and should be able to run the app on your device by selecting it inside of Android Studio.

@@ -1,0 +1,6 @@
+Running the App on a Real iOS Device
+Of course you can also run the app on a real iOS device with ease.
+
+Simply connect your iPhone to your Mac via USB and accept the connection on your iPhone ("Trust" the connected Mac).
+
+Once that's done, you should be able to select your device in the devices dropdown inside of XCode.

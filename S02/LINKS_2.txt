@@ -1,0 +1,7 @@
+https://angular.io/guide/lifecycle-hooks
+
+https://academind.com/learn/javascript/reference-vs-primitive-values/
+
+https://academind.com/learn/javascript/understanding-rxjs/obervables-observers-subscriptions/
+
+

@@ -1,0 +1,39 @@
+Filtering & Navigation
+With the current implementation, you might notice a tiny bug if you filtered for "Bookable Places", clicked "More" and then navigated back to the "Discover" page by pressing the "Back" button on the "Place Detail" page.
+
+On the "Discover" page (where "Bookable Places" is still selected), you'll now see all places listed instead of only the bookable ones.
+
+This bug occurs because we do fetch all places when the page is loaded because of ionViewWillEnter. In the subscription inside of ngOnInit, we then don't take any filter into account.
+
+The solution is simple:
+
+You can add a property where you store the currently set filter, for example (directly inside of the DiscoverPage class):
+
+private chosenFilter = 'all';
+Inside of onFilterUpdate, you can then store the currently chosen filter:
+
+onFilterUpdate(event: CustomEvent<SegmentChangeEventDetail>) {
+    this.authService.userId.pipe(take(1)).subscribe(userId => {
+      if (event.detail.value === 'all') {
+          ...
+            this.chosenFilter = 'all';
+      } else {
+          ...
+          this.chosenFilter = 'bookable';
+      }
+    });
+}
+Inside of the places subscription in ngOnInit, you can then check the chosen filter and update the places correctly:
+
+this.placesSub = this.placesService.places.subscribe(places => {
+    this.loadedPlaces = places;
+    if (this.chosenFilter === 'all') {
+        this.relevantPlaces = this.loadedPlaces;
+        this.listedLoadedPlaces = this.relevantPlaces.slice(1);
+    } else {
+        this.relevantPlaces = this.loadedPlaces.filter(
+          place => place.userId !== userId
+        );
+        this.listedLoadedPlaces = this.relevantPlaces.slice(1);
+    }
+});

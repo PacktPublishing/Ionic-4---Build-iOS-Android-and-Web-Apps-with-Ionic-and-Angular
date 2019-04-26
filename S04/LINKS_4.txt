@@ -1,0 +1,4 @@
+https://academind.com/learn/javascript/understanding-rxjs/
+
+https://academind.com/learn/javascript/reference-vs-primitive-values/
+

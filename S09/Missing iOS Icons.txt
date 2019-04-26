@@ -1,0 +1,13 @@
+Missing iOS Icons
+If you're missing some iOS icons after setting a global toolbar style, you might be facing a bug that I also faced during recording: Ionic doesn't use the toolbar CSS variables correctly behind the scenes.
+
+Until this is fixed, you can fix it manually by adding the following CSS rule to your theme/variables.scss file:
+
+ion-toolbar {
+  ion-button,
+  ion-back-button,
+  ion-menu-button,
+  .sc-ion-back-button-ios-h {
+    --color: white;
+  }
+}

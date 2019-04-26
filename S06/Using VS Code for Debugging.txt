@@ -1,0 +1,4 @@
+Using VS Code for Debugging
+When working with VS Code, you can also use the built-in debugging features to debug Angular apps.
+
+The official instructions should be helpful: https://code.visualstudio.com/docs/nodejs/angular-tutorial#_debugging-angular

@@ -1,0 +1,6 @@
+Useful Resources & Links
+Ionic iOS Publishing Docs: https://ionicframework.com/docs/publishing/app-store
+
+Ionic Android Publishing Docs: https://ionicframework.com/docs/publishing/play-store
+
+Ionic PWA Publishing Docs: https://ionicframework.com/docs/publishing/progressive-web-app
